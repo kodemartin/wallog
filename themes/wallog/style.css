@@ -1,0 +1,44 @@
+body {
+    font-family: 'freemono', 'courier new', monospace;
+    background-color: #fffffe;
+    margin: 0;
+    padding: 0;
+}
+
+.post {
+	margin: 0 70px;
+    max-width: 800px;
+}
+
+code {
+	font-family: Courier, "Courier New", Monaco, Tahoma;
+	background: #eee;
+	color: #333;
+	padding: 0px 2px;
+    white-space: pre;
+}
+
+h1 {
+    margin-left: 70px;
+}
+
+footer {
+    background: #ccc;
+    padding: 5px 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+@media all and (max-width:500px) {
+    body{
+        width: 480px;
+    }
+   .post { 
+       margin-left: 20px;
+       margin-right: 20px;
+   }
+   #header { 
+       padding-left: 20px;
+   }
+}
