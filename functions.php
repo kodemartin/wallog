@@ -1,9 +1,9 @@
 <?php
 function parseMeta($file){
     $post = file_get_contents($file);
-    return parseMetaText($post);
+    return parseMetaText($post,filectime($file));
 }
-function parseMetaText($text){
+function parseMetaText($text,$timestamp = null){
     global $date_format;
     preg_match('#/\*(.*?)\*/#ms', $text, $matches);
     $meta = $matches[1];
@@ -15,6 +15,8 @@ function parseMetaText($text){
     $meta = $newmeta;
     if (isset($meta['Date'])){
         $meta['formatted_date'] = date($date_format,strtotime($meta['Date']));
+    } else if (!is_null($timestamp)) { 
+        $meta['formatted_date'] = date($date_format,$timestamp); 
     } else $meta['formatted_date']="";
     if (!isset($meta['title'])) $meta['title']="";
     

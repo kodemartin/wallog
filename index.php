@@ -18,13 +18,11 @@ if ($requested_file == '') {
     $posts = array_merge($oldposts, $posts);
     foreach ($posts as $post_file){
         $post = file_get_contents($post_file);
-        $postmeta = parseMetaText($post);
+        $postmeta = parseMeta($post_file);
         $post_html = Markdown::defaultTransform($post);
         $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
         if (isset($postmeta['Date']))
             $timestamp = strtotime($postmeta['Date']);
-        else
-            $timestamp = filectime($post_file);
         $newposts[$timestamp]=array();
         $newposts[$timestamp]['file']=str_replace("content/","",str_replace(".md", '', $post_file));
         $newposts[$timestamp]['meta']=$postmeta;
@@ -38,7 +36,7 @@ if ($requested_file == '') {
     $is_front_page = false;
 
     $post = file_get_contents('content/'.$requested_file.'.md');
-    $meta = parseMetaText($post);
+    $meta = parseMeta($post_file);
 
     $post_html = Markdown::defaultTransform($post);
     $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
