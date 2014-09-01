@@ -36,8 +36,9 @@ if ($requested_file == '') {
     $posts = array_reverse($posts, true);
 } else {
     $is_front_page = false;
-
-    $post = file_get_contents('content/'.$requested_file.'.md');
+    
+    $post_file = 'content/'.$requested_file.'.md';
+    $post = file_get_contents($post_file);
     $meta = parseMeta($post_file);
 
     $post_html = Markdown::defaultTransform($post);
