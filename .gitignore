@@ -9,3 +9,5 @@ Thumbs.db
 # User config
 config.php
 /nbproject/private/
+
+*.orig
