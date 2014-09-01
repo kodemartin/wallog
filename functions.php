@@ -16,7 +16,8 @@ function parseMetaText($text,$timestamp = null){
     if (isset($meta['Date'])){
         $meta['formatted_date'] = date($date_format,strtotime($meta['Date']));
     } else if (!is_null($timestamp)) { 
-        $meta['formatted_date'] = date($date_format,$timestamp); 
+        $meta['formatted_date'] = date($date_format,$timestamp);
+        $meta['Date'] = $timestamp;
     } else $meta['formatted_date']="";
     if (!isset($meta['title'])) $meta['title']="";
     

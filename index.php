@@ -19,15 +19,17 @@ if ($requested_file == '') {
     foreach ($posts as $post_file){
         $post = file_get_contents($post_file);
         $postmeta = parseMeta($post_file);
-        $post_html = Markdown::defaultTransform($post);
-        $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
-        if (isset($postmeta['Date']))
-            $timestamp = strtotime($postmeta['Date']);
-        $newposts[$timestamp]=array();
-        $newposts[$timestamp]['file']=str_replace("content/","",str_replace(".md", '', $post_file));
-        $newposts[$timestamp]['meta']=$postmeta;
-        $newposts[$timestamp]['html']=$post_html;
-        $newposts[$timestamp]['excerpt']=truncate(strip_tags($post_html,"<p><a><pre><code>"),$excerpt_length);
+        if ($postmeta['Status']!='Draft'){
+            $post_html = Markdown::defaultTransform($post);
+            $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
+            if (isset($postmeta['Date']))
+                $timestamp = strtotime($postmeta['Date']);
+            $newposts[$timestamp]=array();
+            $newposts[$timestamp]['file']=str_replace("content/","",str_replace(".md", '', $post_file));
+            $newposts[$timestamp]['meta']=$postmeta;
+            $newposts[$timestamp]['html']=$post_html;
+            $newposts[$timestamp]['excerpt']=truncate(strip_tags($post_html,"<p><a><pre><code>"),$excerpt_length);
+        }
     }
     $posts = $newposts;
     ksort($posts);
