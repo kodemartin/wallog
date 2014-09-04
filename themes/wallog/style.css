@@ -18,6 +18,11 @@ code {
     white-space: pre;
 }
 
+pre>code {
+    display: block;
+    overflow-x: auto;
+}
+
 h1 {
     margin-left: 70px;
 }
