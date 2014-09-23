@@ -24,11 +24,13 @@ if ($requested_file == '') {
             $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
             if (isset($postmeta['Date']))
                 $timestamp = strtotime($postmeta['Date']);
-            $newposts[$timestamp]=array();
-            $newposts[$timestamp]['file']=str_replace("content/","",str_replace(".md", '', $post_file));
-            $newposts[$timestamp]['meta']=$postmeta;
-            $newposts[$timestamp]['html']=$post_html;
-            $newposts[$timestamp]['excerpt']=truncate(strip_tags($post_html,"<p><a><pre><code>"),$excerpt_length);
+            if (!isset($newposts[$timestamp])) $key = $timestamp; else $key = $timestamp+1;
+
+            $newposts[$key]=array();
+            $newposts[$key]['file']=str_replace("content/","",str_replace(".md", '', $post_file));
+            $newposts[$key]['meta']=$postmeta;
+            $newposts[$key]['html']=$post_html;
+            $newposts[$key]['excerpt']=truncate(strip_tags($post_html,"<p><a><pre><code>"),$excerpt_length);
         }
     }
     $posts = $newposts;
