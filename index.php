@@ -47,7 +47,7 @@ if ($requested_file == '') {
     $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
     //the negative lookahead is for backward compatibility
     //we are allowing 'real' paths so that both the site and IDE's render content ok
-    $post_html = preg_replace('#src=../(?!content/)#', 'src=../content/', $post_html);
+    $post_html = preg_replace('#src=\.\./(?!content/)#', 'src=../content/', $post_html);
 }
 
 $pages = glob('content/pages/*.md');
