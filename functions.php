@@ -3,10 +3,21 @@ function parseMeta($file){
     $post = file_get_contents($file);
     return parseMetaText($post,filectime($file));
 }
+
+function get_post($post_name){
+    $post = file_get_contents($post_name);
+    $post = split_post($post);
+    $post = array_merge($post, parseMetaText($post['meta']));
+    return $post;
+}
+
+function split_post($post){
+    return array_combine(array('meta','text'),explode("\n--\n",$post));
+}
+
 function parseMetaText($text,$timestamp = null){
     global $date_format;
-    preg_match('#/\*(.*?)\*/#ms', $text, $matches);
-    $meta = $matches[1];
+    $meta = explode("\n--\n",$text)[0];
     $meta = explode("\n",$meta);
     foreach( $meta as $one) {
         $parts = explode(":",$one, 2);
@@ -15,12 +26,12 @@ function parseMetaText($text,$timestamp = null){
     $meta = $newmeta;
     if (isset($meta['Date'])){
         $meta['formatted_date'] = date($date_format,strtotime($meta['Date']));
-    } else if (!is_null($timestamp)) { 
+    } else if (!is_null($timestamp)) {
         $meta['formatted_date'] = date($date_format,$timestamp);
         $meta['Date'] = $timestamp;
     } else $meta['formatted_date']="";
-    if (!isset($meta['title'])) $meta['title']="";
-    
+    if (!isset($meta['Title'])) $meta['Title']="";
+
     return $meta;
 }
 

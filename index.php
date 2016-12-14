@@ -1,4 +1,4 @@
-<?php 
+<?php
 //wordpress permalink compatibility
 if (isset($_GET['p'])) {header("Location: old/".$_GET['p']); die();}
 require_once 'config.php';
@@ -12,23 +12,21 @@ if ($requested_file != '' && !file_exists('content/'.$requested_file.".md")) {
     $requested_file = '404';
 }
 if ($requested_file == '') {
-    $is_front_page = true; 
+    $is_front_page = true;
     $oldposts = glob('content/old/*.md');
     $posts = glob('content/posts/*.md');
     $posts = array_merge($oldposts, $posts);
     foreach ($posts as $post_file){
-        $post = file_get_contents($post_file);
-        $postmeta = parseMeta($post_file);
-        if ($postmeta['Status']!='Draft'){
-            $post_html = Markdown::defaultTransform($post);
-            $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
-            if (isset($postmeta['Date']))
-                $timestamp = strtotime($postmeta['Date']);
+        $post = get_post($post_file);
+        if ($post['Status']!='Draft'){
+            $post_html = Markdown::defaultTransform($post['text']);
+            if (isset($post['Date']))
+                $timestamp = strtotime($post['Date']);
             if (!isset($newposts[$timestamp])) $key = $timestamp; else $key = $timestamp+1;
 
             $newposts[$key]=array();
             $newposts[$key]['file']=str_replace("content/","",str_replace(".md", '', $post_file));
-            $newposts[$key]['meta']=$postmeta;
+            $newposts[$key]['meta']=$post;
             $newposts[$key]['html']=$post_html;
             $newposts[$key]['excerpt']=truncate(strip_tags($post_html,"<p><a><pre><code>"),$excerpt_length);
         }
@@ -38,14 +36,12 @@ if ($requested_file == '') {
     $posts = array_reverse($posts, true);
 } else {
     $is_front_page = false;
-    
+
     $post_file = 'content/'.$requested_file.'.md';
     $post = file_get_contents($post_file);
-    $meta = parseMeta($post_file);
+    $post = get_post($post_file);
 
-    $post_html = Markdown::defaultTransform($post);
-    $post_html = preg_replace('#/\*(.*?)\*/#ms', '', $post_html);
-    //the negative lookahead is for backward compatibility
+    $post_html = Markdown::defaultTransform($post['text']);
     //we are allowing 'real' paths so that both the site and IDE's render content ok
     $post_html = preg_replace('#src=("?)\.\./(?!content/)#', 'src=$1../content/', $post_html);
 }
