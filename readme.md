@@ -1,0 +1,1 @@
+content/posts/welcome-to-wallog.md
