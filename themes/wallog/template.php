@@ -12,19 +12,20 @@
     <link rel="icon" type="image/png" href="<?=$theme?>/images/favicon.png" />
     <link rel="apple-touch-icon" href="<?=$theme?>/images/touchicon.png"/>
     <link rel="shortcut icon" href="<?=$theme?>/images/touchicon.png" />
-    <meta name="viewport" content="width=320">
+    <meta name="viewport" content="width=device-width">
 </head>
 <body>
 
 	<header id="header">
-		<div class="inner clearfix">
-			<h1><a href="<?=$base_url?>"><?=$site_title?></a></h1>
+			<h1>		  
+				<img id=logo src="<?=$theme?>/images/logo.svg">
+				<a href="<?=$base_url?>"><?=$site_title?></a>
+			</h1>
 			<ul class="nav">
 				<?php foreach ($pages as $title=>$page) { ?>
 				<li><a href="<?=$base_url.$page ?>"><?=$title ?></a></li>
 				<?php } ?>
 			</ul>
-		</div>
 	</header>
 
     <?php if ($is_front_page) {?> <!-- Front page lists all blog posts -->

@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="239.99998"
-   height="240"
+   width="232.9538"
+   height="170.6757"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48+devel+osxmenu r12782"
    sodipodi:docname="logo.svg"
    inkscape:export-filename="/home/qwazix/Documents/projects/Pico/themes/simplog/images/favicon.png"
    inkscape:export-xdpi="6"
@@ -28,20 +28,20 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.0984499"
-     inkscape:cx="30.341765"
-     inkscape:cy="-47.559058"
+     inkscape:cx="99.533558"
+     inkscape:cy="111.45973"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1078"
-     inkscape:window-x="0"
+     inkscape:window-width="1276"
+     inkscape:window-height="778"
+     inkscape:window-x="4"
      inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -55,15 +55,16 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="Text"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-49.179384,35.870606)">
+     transform="translate(-53.612855,-38.034777)"
+     style="display:inline">
     <text
        xml:space="preserve"
-       style="font-size:504.51080322px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:4.89795876;stroke-miterlimit:4;stroke-dasharray:none;font-family:FreeMono;-inkscape-font-specification:FreeMono Bold"
-       x="17.826136"
-       y="193.60825"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:382.07415771px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:'FreeMono Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.7093029;stroke-miterlimit:4;stroke-dasharray:none;"
+       x="55.467506"
+       y="206.85583"
        id="text2985"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/home/qwazix/Documents/projects/Pico/themes/simplog/images/touchicon.png"
@@ -71,8 +72,25 @@
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan2987"
-         x="17.826136"
-         y="193.60825"
-         style="stroke-width:4.89795876">s</tspan></text>
+         x="55.467506"
+         y="206.85583"
+         style="stroke-width:3.7093029;stroke:none;">w</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline"
+     transform="translate(-4.433471,-73.905383)">
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:382.07415771px;line-height:125%;font-family:FreeMono;-inkscape-font-specification:'FreeMono Bold';letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.7093029;stroke-miterlimit:4;stroke-dasharray:none"
+       id="text2985-4"
+       transform="translate(0,40)">
+      <path
+         d="m 174.78283,73.585375 2.67452,0 -15.28297,58.457345 -23.30652,-60.367716 -33.62253,0 L 82.32088,132.04272 67.419988,73.585375 c 12.990521,0 24.452746,-3.056593 24.452746,-18.721634 0,-15.66504 -10.698076,-19.103707 -25.216894,-19.103707 l -35.150823,0 c -14.518818,0 -25.2168943,5.349038 -25.2168943,19.103707 0,11.080151 7.6414833,17.957486 20.6320043,18.721634 l 32.476304,129.141065 35.91497,0 25.981039,-69.15542 27.12727,69.15542 35.15082,0 32.09423,-129.141065 c 12.60845,-0.764148 19.86786,-7.641483 19.86786,-18.721634 0,-16.047114 -11.8443,-19.103707 -25.2169,-19.103707 l -35.53289,0 c -17.19334,0 -25.2169,7.641483 -25.2169,19.103707 0,15.665041 11.46223,18.721634 25.2169,18.721634 z"
+         style="stroke-width:3.7093029;stroke:none"
+         id="path7057"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>
