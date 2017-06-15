@@ -31,6 +31,7 @@ if ($requested_file == '') {
             $newposts[$key]['excerpt']=truncate(strip_tags($post_html,"<p><a><pre><code>"),$excerpt_length);
         }
     }
+    unset($post);
     $posts = $newposts;
     ksort($posts);
     $posts = array_reverse($posts, true);
