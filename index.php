@@ -17,6 +17,9 @@ if ($requested_file == '') {
     $posts = glob('content/posts/*.md');
     $posts = array_merge($oldposts, $posts);
     foreach ($posts as $post_file){
+        //ignore symlinks (this way one can use symlinks to keep old url's around
+        //and move actual post files)
+        if (is_link($post_file)) continue;
         $post = get_post($post_file);
         if ($post['Status']!='Draft'){
             $post_html = Markdown::defaultTransform($post['text']);
