@@ -12,7 +12,7 @@ function get_post($post_name){
 }
 
 function split_post($post){
-    return array_combine(array('meta','text'),explode("\n--\n",$post));
+    return array_combine(array('meta','text'),explode("\n--\n",$post, 2));
 }
 
 function parseMetaText($text,$timestamp = null){
