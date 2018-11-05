@@ -54,8 +54,8 @@ I usually put the headers in a code block so that it looks nice in [Atom](https:
 
 If you want to see wallog in action go here
 
- * [http://oob.gr/blog](outofbounds blog)
- * [http://social.d-e.gr/](d-e technical blog)
+ * [outofbounds blog](http://oob.gr/blog)
+ * [d-e technical blog](http://social.d-e.gr/)
  * If you use it, please get in touch and I can include you here if you want.
 
 ### V2
