@@ -25,6 +25,19 @@ Then you just need to push `master` to that remote and your blog will be publish
 
 inside the bare repo
 
+#### Using a `docker` container
+
+1. Build the docker image
+
+        $ docker build --build-arg BLOG_NAME=myblog -t myblog-docker .
+
+2. Run a container
+
+        $ docker run -d -p 88:80 --name myblog myblog-docker
+
+3. Visit http://localhost:88/myblog/
+
+
 ### How to write
 
 Inspect this file, it's at `content/posts/welcome-to-wallog.md`. Then copy it, change the headers, edit the post and just save it.
@@ -41,8 +54,8 @@ I usually put the headers in a code block so that it looks nice in [Atom](https:
 
 If you want to see wallog in action go here
 
- * [http://oob.gr/blog](outofbounds blog)
- * [http://social.d-e.gr/](d-e technical blog)
+ * [outofbounds blog](http://oob.gr/blog)
+ * [d-e technical blog](http://social.d-e.gr/)
  * If you use it, please get in touch and I can include you here if you want.
 
 ### V2

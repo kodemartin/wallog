@@ -3,4 +3,4 @@
 // configure this here
 
 $folder = "wallog/";
-$base_url = "http://{$_SERVER['HTTP_HOST']}/wallog/";
+$base_url = "http://{$_SERVER['HTTP_HOST']}/$folder";
