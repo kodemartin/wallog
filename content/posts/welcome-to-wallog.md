@@ -25,6 +25,19 @@ Then you just need to push `master` to that remote and your blog will be publish
 
 inside the bare repo
 
+#### Using a `docker` container
+
+1. Build the docker image
+
+        $ docker build --build-arg BLOG_NAME=myblog -t myblog-docker .
+
+2. Run a container
+
+        $ docker run -d -p 88:80 --name myblog myblog-docker
+
+3. Visit http://localhost:88/myblog/
+
+
 ### How to write
 
 Inspect this file, it's at `content/posts/welcome-to-wallog.md`. Then copy it, change the headers, edit the post and just save it.
